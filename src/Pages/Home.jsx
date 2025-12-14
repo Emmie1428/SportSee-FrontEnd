@@ -4,7 +4,8 @@ import { getUserInfo, getActivity, getAverageSessions, getPerformance } from "..
 
 function Home () {
     const {userId} = useParams ()
-    const [data, setData] = useState(12)
+    const [data, setData] = useState(null)
+    const [isLoaded, setIsLoaded] = useState(false)
 
     useEffect(() => {
         async function fetchAllDatas() {
@@ -15,20 +16,23 @@ function Home () {
                 getPerformance(Number(userId))
             ])
         
-        setData({ user, activity, averageSessions, performance})}
+        setData({ user, activity, averageSessions, performance})
+        setIsLoaded(true)
+        }
+        
+        fetchAllDatas()},
+        [userId]) 
 
-        fetchAllDatas()
-    }, [userId]) 
-
+    if(!isLoaded) {
+        return(<div>Chargement...</div>)
+    }
     if (!data) {
         return (<Navigate to="*" />)
     } else { return (<div>
-        <p>test{userId}{data.user.lastName}{data.user.lipidCount}</p>
+        <h1>Bonjour {`${data.user.firstName}`}</h1>
+        <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
     </div>)
-
     }
-
-  
 }
 
 export default Home

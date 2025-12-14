@@ -1,0 +1,38 @@
+
+
+.vertical-menu {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        min-height: 632px;
+        width: 117px;
+        background-color: #020203;
+        margin: 0;
+        justify-content: space-between;
+        padding: 0 0 59px 0;
+
+    &_sports {
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        height: 500px;
+        justify-content: center;
+
+        &_individual {
+            padding: 16px;
+            border-radius: 6px;
+            background-color: white;
+            width: 32px;
+        }
+    }
+
+    &_copiryght {
+        font-family: "Roboto";
+        font-size: 12px;
+        font-weight: 500;
+        transform: rotate(-90deg);
+        width: max-content;
+        color: white;
+        margin: 0 0 59px;
+    }
+}
