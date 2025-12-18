@@ -11,6 +11,18 @@ class User {
         this.carbohydrateCount = data.keyData.carbohydrateCount
         this.lipidCount = data.keyData.lipidCount
     }
+
+    getNutritionDatas () {
+        return [
+            {type: "calories", value: this.calorieCount}, 
+            {type: "proteines", value: this.proteinCount},
+            {type: "glucides", value: this.carbohydrateCount},
+            {type: "lipides", value: this.lipidCount}
+        ]
+    }
 }
 
+
+
 export default User
+

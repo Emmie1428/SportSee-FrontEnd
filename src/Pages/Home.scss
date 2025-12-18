@@ -1,0 +1,28 @@
+
+
+.home {
+    padding: 68px 90px 86px 107px;
+    font-family: Roboto;
+
+    &_welcome {
+        font-size: 38px;
+        font-weight: 500;
+        margin: 0 0 41px;
+
+        &_name {
+            color: #FF0101;
+        }
+    }
+
+    &_quote {
+        font-size: 18px;
+        margin: 0;
+    }
+
+    &_nutrition {
+        display: flex;
+        gap: 39px;
+        flex-direction: column;
+        width: fit-content;
+    }
+}

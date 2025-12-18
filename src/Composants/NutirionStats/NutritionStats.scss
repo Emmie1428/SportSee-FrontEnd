@@ -1,0 +1,39 @@
+.nutrition {
+    width: 258px;
+    height: 124px;
+    border-radius: 5px;
+    background-color: #FBFBFB;
+    box-shadow: 0px 2px 4px 0px #00000005;
+    font-family: roboto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &_icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 5px;
+       
+        text-align: center;
+        align-content: center;
+        
+    }
+
+    &_info {
+
+        padding-left: 24px;
+
+        &_title {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        &_value {
+            font-size: 14px;
+            font-weight: 500;
+            margin: 0;
+        }
+    }
+    
+}
