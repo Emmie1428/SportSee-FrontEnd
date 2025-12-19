@@ -7,8 +7,8 @@ import AverageSessions from "../Models/AverageSessions"
 import Performance from "../Models/Performance"
 import {USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE } from "../Mocks/mockDatas"
 
-const BASE_URL = "http://localhost:3000"
-const USE_MOCK = false //true pour passer sur les mockDatas//
+const apiURL = import.meta.env.VITE_BASE_URL
+const USE_MOCK = true //true pour passer sur les mockDatas//
 
 //Configuration des types d'infos//
 const CONFIG= {
@@ -42,13 +42,18 @@ const CONFIG= {
 export async function fetchData(type, userId) {
     const {endpoint, mockData, model, idScript} = CONFIG[type]
     
-    if (USE_MOCK) {
-        const data = mockData.find(item => item[idScript] === userId)
-        return new model(data)
-        
-    } else {
-        const response = await axios.get(`${BASE_URL}${endpoint(userId)}`)
-        return new model (response.data.data)
+    try {
+        if (USE_MOCK) {
+            const data = mockData.find(item => item[idScript] === userId)
+            return data ? new model(data) : null
+            
+        } else {
+            const response = await axios.get(`${apiURL}${endpoint(userId)}`)
+            return new model (response.data.data)
+        } 
+    } catch (error) {
+        console.error(`Erreur ${type} `, error.message);
+        return null
     }
 }
 

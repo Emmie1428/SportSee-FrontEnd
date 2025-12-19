@@ -8,7 +8,6 @@ function Home () {
     const {userId} = useParams ()
     const [data, setData] = useState(null)
     const [isLoaded, setIsLoaded] = useState(false)
-    const [hasTimedOut, setHasTimedOut] = useState(false)
 
     useEffect(() => {
         async function fetchAllDatas() {
@@ -26,28 +25,32 @@ function Home () {
         fetchAllDatas()},
         [userId]) 
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            if (!isLoaded) (setHasTimedOut(true))
-        }, 2500)
-        return () => clearTimeout(timer);
-            },[isLoaded])
-    
-    if (hasTimedOut && !isLoaded) return (<Navigate to="*" />)
-    
-        if (!isLoaded) return (<div>Chargement...</div>)
+    if (!isLoaded) return (<div>Chargement...</div>)
      
     return (<div className="home">
-                <h1 className="home_welcome">Bonjour <span className="home_welcome_name">{`${data.user.firstName}`}</span></h1>
-                <p className="home_quote">Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+                {data.user 
+                ? ( 
+                    <>
+                        <h1 className="home_welcome">Bonjour
+                            <span className="home_welcome_name">{(`${data.user.firstName}`)}</span>   
+                        </h1>
+                        <p className="home_quote">Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+                    </>
+                ) : (
+                    <h1 className="home_welcome">Bonjour
+                        <span className="home_welcome_name"> utilisateur inconu</span>   
+                    </h1>)}
                 <div className="home_nutrition">
-                    {data.user.getNutritionDatas().map((nutrition) => (
+                    {data.user 
+                    ? (data.user.getNutritionDatas().map((nutrition) => (
                         <NutritionStats
                             key={nutrition.type}
                             type={nutrition.type}
                             value={nutrition.value}
                         />)
-                    )}
+                    ))
+                    : (<p>Données nutritionnelles indisponibles</p>)
+                }
                 </div>
 
             
