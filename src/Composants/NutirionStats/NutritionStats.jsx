@@ -15,6 +15,13 @@ const nutritionConfig = {
 
 function NutritionStats ({type, value}) {
     const config = nutritionConfig[type]
+    if (value === undefined || value === null) {
+        return (
+            <div className="nutrition-error">
+                <p>Donnée indisponible</p>
+            </div>
+        )
+    }
     
     return (<div className="nutrition">
                 <div className="nutrition_icon" style={{backgroundColor: `${config.color}`}}>
