@@ -7,8 +7,22 @@
 
 .recharts-legend-wrapper ul {
   gap: 30px;
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 .recharts-legend-item-text {
   color: #74798C !important;
+}
+
+.recharts-xAxis .recharts-cartesian-axis-line {
+    stroke: #DEDEDE !important;
+}
+
+.recharts-cartesian-axis-tick-value {
+    fill: #9B9EAC !important;
+}
+
+.recharts-cartesian-grid-horizontal line:first-child {
+    display: none;
 }

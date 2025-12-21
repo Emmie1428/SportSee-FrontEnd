@@ -47,13 +47,15 @@ function Home () {
                     )}  
                 </div>
                 <div className="home_daily-actvity">
-                    <ActivityBarChart
-                    key={data.activity.userId}
-                    data={data.activity.formattedSession}
-                    
-                    />
+                    {! data.activity ? (
+                        <div>Données indisponible</div>
+                    ):(
+                        <ActivityBarChart
+                            key={data.activity.userId}
+                            data={data.activity.formattedSession}
+                        />
+                    )}
                 </div>
-            
             </div>)
 }
     

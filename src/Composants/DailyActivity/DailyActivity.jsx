@@ -1,9 +1,9 @@
-import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ReferenceLine} from 'recharts';
+import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
 import "./DailyActivity.scss"
 
 const ActivityBarChart = ({data}) => {
   return (
-    <div style={{ backgroundColor: "#FBFBFB", padding: "20px", borderRadius: "5px", fontSize: "14px", color: "#9B9EAC", fontWeight: "500"}}>
+    <div style={{ backgroundColor: "#FBFBFB", padding: "24px 19px 25px 32px", borderRadius: "5px", fontSize: "14px", fontWeight: "500"}}>
         <span className="bar-chart_title">Activité quotidienne</span>
         <ResponsiveContainer width="100%" height={320}>
             <BarChart
@@ -19,11 +19,18 @@ const ActivityBarChart = ({data}) => {
                 <XAxis 
                     dataKey="day"
                     tickLine={false} 
-                    tickCount={3}
+                    fontColor={"#9B9EAC"}
+                    tickCount={10}
+                    scale="point"
+                    padding={{left: 15, right: 10}}
+                    width="auto"
+                    tick={{ dy: 15 }}
                 />
                 <YAxis 
+                    itemStyle={{color: "#9B9EAC"}}
                     yAxisId="kg"
-                    width="auto"
+                    width={80}
+                    tick={{ dx: 43 }}
                     orientation="right" 
                     axisLine={false}
                     tickLine={false}
@@ -33,7 +40,6 @@ const ActivityBarChart = ({data}) => {
                             dataMax => Math.ceil(dataMax) + 2  
                     ]}
                 />
-              
                 <YAxis 
                     yAxisId="kcal"
                     hide={true}
@@ -43,14 +49,14 @@ const ActivityBarChart = ({data}) => {
                         border: "none" ,
                         fontSize: 7,
                         margin: 0
-                        }}
+                    }}
                     itemStyle={{ color: '#FFFFFF',
                         margin: 0
-                     }}
-                    cursor={{ fill: 'rgba(196, 196, 196, 0.5)' }}
-                    labelFormatter={() => ''} 
+                    }}
+                    cursor={{ fill: "rgba(196, 196, 196, 0.5)" }}
+                    labelFormatter={() => ""} 
                     formatter={(value, name) =>
-                    name === 'kilogram'
+                    name === "kilogram"
                         ? [`${value} kg`]
                         : [`${value} kCal`]
                     }
@@ -61,18 +67,14 @@ const ActivityBarChart = ({data}) => {
                     verticalAlign="top"
                     align="right"
                     width="auto"
-                    fontColor={"#9B9EAC"}
-                    wrapperStyle={{
-                        paddingBottom: "30px"
-                    }}
+                    wrapperStyle={{paddingBottom: "30px"}}
                     formatter={(value) => {
-                    const labels = {
-                        kilogram: "Poids (kg)", 
-                        calories: "Calories brûlées (kCal)"
-                    }
-                    return (labels[value])
-                }}
-
+                        const labels = {
+                            kilogram: "Poids (kg)", 
+                            calories: "Calories brûlées (kCal)"
+                        }
+                        return (labels[value])
+                    }}
                 />
                 <Bar yAxisId="kg" dataKey="kilogram" fill="#282D30"  radius={[4 , 4 , 0, 0]} />
                 <Bar yAxisId="kcal" dataKey="calories" fill="#E60000"  radius={[4 , 4 , 0, 0]} />

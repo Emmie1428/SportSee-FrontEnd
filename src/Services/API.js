@@ -8,7 +8,7 @@ import Performance from "../Models/Performance"
 import {USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE } from "../Mocks/mockDatas"
 
 const apiURL = import.meta.env.VITE_BASE_URL
-const USE_MOCK = false //true pour passer sur les mockDatas//
+const USE_MOCK = true //true pour passer sur les mockDatas//
 
 //Configuration des types d'infos//
 const CONFIG= {
