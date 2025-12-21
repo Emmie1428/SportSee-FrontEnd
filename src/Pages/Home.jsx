@@ -4,6 +4,8 @@ import { getUserInfo, getActivity, getAverageSessions, getPerformance } from "..
 import "./Home.scss"
 import Welcoming from "../Composants/Welcoming/Welcoming"
 import NutritionStats from "../Composants/NutirionStats/NutritionStats"
+import ActivityBarChart from "../Composants/DailyActivity/DailyActivity"
+import { BarChart } from "recharts"
 
 function Home () {
     const {userId} = useParams ()
@@ -36,17 +38,21 @@ function Home () {
                     />
                 </div>
                 <div className="home_nutrition">
-                    
                     {data.user.getNutritionDatas().map((nutrition) => (
                         <NutritionStats
                             key={nutrition.type}
                             type={nutrition.type}
                             value={nutrition.value}
                         />)
-                    )}
-                    
+                    )}  
                 </div>
-
+                <div className="home_daily-actvity">
+                    <ActivityBarChart
+                    key={data.activity.userId}
+                    data={data.activity.formattedSession}
+                    
+                    />
+                </div>
             
             </div>)
 }
