@@ -3,7 +3,7 @@ import "./DailyActivity.scss"
 
 const ActivityBarChart = ({data}) => {
   return (
-    <div style={{ backgroundColor: "#FBFBFB", padding: "24px 19px 25px 32px", borderRadius: "5px", fontSize: "14px", fontWeight: "500"}}>
+    <div className="daily-activity" style={{ backgroundColor: "#FBFBFB", padding: "24px 19px 25px 32px", borderRadius: "5px", fontSize: "14px", fontWeight: "500"}}>
         <span className="bar-chart_title">Activité quotidienne</span>
         <ResponsiveContainer width="100%" height={320}>
             <BarChart
@@ -19,7 +19,6 @@ const ActivityBarChart = ({data}) => {
                 <XAxis 
                     dataKey="day"
                     tickLine={false} 
-                    fontColor={"#9B9EAC"}
                     tickCount={10}
                     scale="point"
                     padding={{left: 15, right: 10}}
@@ -27,7 +26,6 @@ const ActivityBarChart = ({data}) => {
                     tick={{ dy: 15 }}
                 />
                 <YAxis 
-                    itemStyle={{color: "#9B9EAC"}}
                     yAxisId="kg"
                     width={80}
                     tick={{ dx: 43 }}

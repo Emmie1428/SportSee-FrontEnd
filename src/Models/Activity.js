@@ -5,7 +5,7 @@ class Activity {
         this.sessions = data.sessions
     }
 
-    get formattedSession() {
+    get formattedActivity() {
         return this.sessions.map((session, index) => ({
             day: (index + 1).toString(),
             calories: session.calories,

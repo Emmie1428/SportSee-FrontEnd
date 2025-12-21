@@ -5,7 +5,7 @@ import "./Home.scss"
 import Welcoming from "../Composants/Welcoming/Welcoming"
 import NutritionStats from "../Composants/NutirionStats/NutritionStats"
 import ActivityBarChart from "../Composants/DailyActivity/DailyActivity"
-import { BarChart } from "recharts"
+import AverageSessionAreaChart from "../Composants/AverageSession/AverageSession"
 
 function Home () {
     const {userId} = useParams ()
@@ -52,9 +52,15 @@ function Home () {
                     ):(
                         <ActivityBarChart
                             key={data.activity.userId}
-                            data={data.activity.formattedSession}
+                            data={data.activity.formattedActivity}
                         />
                     )}
+                </div>
+                <div>
+                    <AverageSessionAreaChart
+                        key={data.averageSessions.userId}
+                        data={data.averageSessions.formattedDuration}
+                    />
                 </div>
             </div>)
 }
