@@ -56,7 +56,7 @@ function Home () {
                         />
                     )}
                 </div>
-                <div>
+                <div className="home_average-session">
                     <AverageSessionAreaChart
                         key={data.averageSessions.userId}
                         data={data.averageSessions.formattedDuration}
