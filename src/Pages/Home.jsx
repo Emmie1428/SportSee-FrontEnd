@@ -6,6 +6,7 @@ import Welcoming from "../Composants/Welcoming/Welcoming"
 import NutritionStats from "../Composants/NutirionStats/NutritionStats"
 import ActivityBarChart from "../Composants/DailyActivity/DailyActivity"
 import AverageSessionAreaChart from "../Composants/AverageSession/AverageSession"
+import PerformanceRadarChart from "../Composants/Performance/Performance"
 
 function Home () {
     const {userId} = useParams ()
@@ -61,6 +62,16 @@ function Home () {
                         key={data.averageSessions.userId}
                         data={data.averageSessions.formattedDuration}
                     />
+                </div>
+                <div className="home_performance">
+                    {! data.performance ? (
+                        <div>Données indisponible</div>
+                    ):(
+                        <PerformanceRadarChart
+                            key={data.performance.userId}
+                            data={data.performance.formattedPerformance}
+                        />
+                    )}
                 </div>
             </div>)
 }

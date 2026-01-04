@@ -7,8 +7,17 @@ class Performance {
         this.endurance = data.kind[3]
         this.strength = data.kind[4]
         this.speed = data.kind[5]
-        this.intesity = data.kind[6]
+        this.intensity = data.kind[6]
         this.data = data.data
+    }
+
+    get formattedPerformance() {
+        const kindTitle = {1:"Cardio", 2:"Énergie", 3:"Endurance", 4:"Force", 5:"Vitesse", 6:"Intensité"}
+        const performancedata =  this.data.map((data) => ({
+            value: data.value,
+            kind: kindTitle[data.kind]
+        }))
+        return performancedata.reverse()
     }
 }
 
