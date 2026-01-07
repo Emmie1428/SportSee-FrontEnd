@@ -20,6 +20,15 @@ class User {
             {type: "lipides", value: this.lipidCount}
         ]
     }
+
+    get scorePourcentage() {
+        return [
+            {name:"score", value: this.score*100, fill: "#FF0000"}
+        ]
+    }  
+    
+        
+        
 }
 
 export default User

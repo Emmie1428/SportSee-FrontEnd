@@ -7,6 +7,7 @@ import NutritionStats from "../Composants/NutirionStats/NutritionStats"
 import ActivityBarChart from "../Composants/DailyActivity/DailyActivity"
 import AverageSessionAreaChart from "../Composants/AverageSession/AverageSession"
 import PerformanceRadarChart from "../Composants/Performance/Performance"
+import GoalRadialBarChart from "../Composants/Goal"
 
 function Home () {
     const {userId} = useParams ()
@@ -70,6 +71,16 @@ function Home () {
                         <PerformanceRadarChart
                             key={data.performance.userId}
                             data={data.performance.formattedPerformance}
+                        />
+                    )}
+                </div>
+                <div className="home_goal">
+                    {! data.user.score ? (
+                        <div>Données indisponible</div>
+                    ):(
+                        <GoalRadialBarChart
+                            key={data.user.userId}
+                            data={data.user.scorePourcentage}
                         />
                     )}
                 </div>
