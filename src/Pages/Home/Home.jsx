@@ -1,13 +1,13 @@
-import { useParams, Navigate } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
-import { getUserInfo, getActivity, getAverageSessions, getPerformance } from "../Services/API" 
+import { getUserInfo, getActivity, getAverageSessions, getPerformance } from "../../Services/API" 
 import "./Home.scss"
-import Welcoming from "../Composants/Welcoming/Welcoming"
-import NutritionStats from "../Composants/NutirionStats/NutritionStats"
-import ActivityBarChart from "../Composants/DailyActivity/DailyActivity"
-import AverageSessionAreaChart from "../Composants/AverageSession/AverageSession"
-import PerformanceRadarChart from "../Composants/Performance/Performance"
-import GoalRadialBarChart from "../Composants/Goal"
+import Welcoming from "../../Composants/Welcoming/Welcoming"
+import NutritionStats from "../../Composants/NutirionStats/NutritionStats"
+import ActivityBarChart from "../../Composants/DailyActivity/DailyActivity"
+import AverageSessionAreaChart from "../../Composants/AverageSession/AverageSession"
+import PerformanceRadarChart from "../../Composants/Performance/Performance"
+import GoalRadialBarChart from "../../Composants/Goal"
 
 function Home () {
     const {userId} = useParams ()
@@ -43,7 +43,7 @@ function Home () {
                 <div className="graph-container">
                 <div className="home_daily-actvity">
                     {! data.activity ? (
-                        <div>Données indisponible</div>
+                        <div className="no-data">Données indisponible</div>
                     ):(
                         <ActivityBarChart
                             key={data.activity.userId}
@@ -60,7 +60,7 @@ function Home () {
                     </div>
                     <div className="home_trio_performance">
                         {! data.performance ? (
-                            <div>Données indisponible</div>
+                            <div className="no-data">Données indisponible</div>
                         ):(
                             <PerformanceRadarChart
                                 key={data.performance.userId}
@@ -70,7 +70,7 @@ function Home () {
                     </div>
                     <div className="home_trio_goal">
                         {! data.user.score ? (
-                            <div>Données indisponible</div>
+                            <div className="no-data">Données indisponible</div>
                         ):(
                             <GoalRadialBarChart
                                 key={data.user.userId}

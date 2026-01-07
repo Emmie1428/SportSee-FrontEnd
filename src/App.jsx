@@ -1,7 +1,4 @@
-
-
-
-import { BrowserRouter } from "react-router-dom"
+import { BrowserRouter, NavLink } from "react-router-dom"
 import Router from "./Composants/Router"
 import Header from "./Composants/Header/Header"
 import VerticalMenu from "./Composants/VerticalMenu/VerticalMenu"
@@ -14,6 +11,7 @@ function App() {
       <div className="container">
         <VerticalMenu />
         <Router />
+        
       </div>
     </BrowserRouter>
   )

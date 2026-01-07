@@ -1,5 +1,3 @@
-
-
 .vertical-menu {
         align-items: center;
         display: flex;
@@ -8,14 +6,13 @@
         width: 117px;
         background-color: #020203;
         margin: 0;
-        justify-content: space-between;
+        justify-content: space-around;
         padding: 0 0 59px 0;
 
     &_sports {
         display: flex;
         gap: 20px;
         flex-direction: column;
-        height: -webkit-fill-available;
         justify-content: center;
 
         &_individual {

@@ -3,7 +3,7 @@ import "./DailyActivity.scss"
 
 const ActivityBarChart = ({data}) => {
   return (
-    <div className="daily-activity" style={{ backgroundColor: "#FBFBFB", padding: "24px 19px 25px 32px", borderRadius: "5px", fontSize: "14px", fontWeight: "500", maxHeight: "272px"}}>
+    <div className="daily-activity" style={{ backgroundColor: "#FBFBFB", padding: "24px 19px 25px 32px", fontSize: "14px", maxHeight: "272px"}}>
         <h3 className="bar-chart_title">Activité quotidienne</h3>
         <ResponsiveContainer width="100%" height={280}>
             <BarChart

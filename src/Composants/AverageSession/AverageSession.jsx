@@ -17,7 +17,7 @@ const CustomCursor = (props) => {
 
 const AverageSessionAreaChart = ({data}) => {
   return (
-    <div className="average-session" style={{ background: "linear-gradient(to top, #FF1A1A 5%, #FF0000 90%)", fontSize: "15px", fontWeight: "500"}}>
+    <div className="average-session" style={{ background: "linear-gradient(to top, #FF1A1A 5%, #FF0000 90%)", fontSize: "15px"}}>
         <h1 className="chart-title">Durée moyenne des sessions</h1>
         <ResponsiveContainer width="100%" height={263}>
             <AreaChart

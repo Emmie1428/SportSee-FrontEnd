@@ -1,0 +1,27 @@
+.error {
+    width: -webkit-fill-available;
+    display: flex;
+    font-family: Roboto;
+    align-items: center;
+    flex-direction: column;
+
+    &_link {
+        display: flex;
+        color: black;
+        padding: 70px;
+        gap: 30px;
+        text-decoration: normal;
+    }
+
+    &_message{
+        padding-top: 70px;
+        font-size: 35px;
+        font-weight: bold;
+        color: red;
+        display: flex;
+        text-align: center;
+        align-self: center;
+        text-anchor: center;
+        height: auto;
+    }
+}
