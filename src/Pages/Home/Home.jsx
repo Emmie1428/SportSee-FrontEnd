@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { useParams, Navigate} from "react-router-dom"
 import { useEffect, useState } from "react"
 import { getUserInfo, getActivity, getAverageSessions, getPerformance } from "../../Services/API" 
 import "./Home.scss"
@@ -13,6 +13,7 @@ function Home () {
     const {userId} = useParams ()
     const [data, setData] = useState(null)
     const [isLoaded, setIsLoaded] = useState(false)
+    const [hasError, setHasError] = useState (false)
 
     useEffect(() => {
         async function fetchAllDatas() {
@@ -22,6 +23,11 @@ function Home () {
                 getAverageSessions(Number(userId)),
                 getPerformance(Number(userId))
             ])
+
+        if (!user && !activity && !averageSessions && !performance){
+            setHasError(true) 
+            return
+        } 
         
         setData({ user, activity, averageSessions, performance})
         setIsLoaded(true)
@@ -30,6 +36,8 @@ function Home () {
         fetchAllDatas()},
         [userId]) 
 
+    if (hasError) return (<Navigate to="*"/>)
+        
     if (!isLoaded) return (<div>Chargement...</div>)
      
     return (<div className="home">
