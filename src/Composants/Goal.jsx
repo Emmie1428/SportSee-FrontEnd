@@ -1,4 +1,4 @@
-import { RadialBarChart, RadialBar, Legend, ResponsiveContainer, PolarAngleAxis} from 'recharts'
+import { RadialBarChart, RadialBar, ResponsiveContainer, PolarAngleAxis} from 'recharts'
 
 
 const GoalRadialBarChart = ({data}) => {

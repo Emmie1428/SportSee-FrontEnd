@@ -39,15 +39,8 @@ function Home () {
                     firstName={data.user.firstName}
                     />
                 </div>
-                <div className="home_nutrition">
-                    {data.user.getNutritionDatas().map((nutrition) => (
-                        <NutritionStats
-                            key={nutrition.type}
-                            type={nutrition.type}
-                            value={nutrition.value}
-                        />)
-                    )}  
-                </div>
+                <div className="big-container">
+                <div className="graph-container">
                 <div className="home_daily-actvity">
                     {! data.activity ? (
                         <div>Données indisponible</div>
@@ -58,31 +51,44 @@ function Home () {
                         />
                     )}
                 </div>
-                <div className="home_average-session">
-                    <AverageSessionAreaChart
-                        key={data.averageSessions.userId}
-                        data={data.averageSessions.formattedDuration}
-                    />
-                </div>
-                <div className="home_performance">
-                    {! data.performance ? (
-                        <div>Données indisponible</div>
-                    ):(
-                        <PerformanceRadarChart
-                            key={data.performance.userId}
-                            data={data.performance.formattedPerformance}
+                <div className="home_trio">
+                    <div className="home_trio_average-session">
+                        <AverageSessionAreaChart
+                            key={data.averageSessions.userId}
+                            data={data.averageSessions.formattedDuration}
                         />
-                    )}
+                    </div>
+                    <div className="home_trio_performance">
+                        {! data.performance ? (
+                            <div>Données indisponible</div>
+                        ):(
+                            <PerformanceRadarChart
+                                key={data.performance.userId}
+                                data={data.performance.formattedPerformance}
+                            />
+                        )}
+                    </div>
+                    <div className="home_trio_goal">
+                        {! data.user.score ? (
+                            <div>Données indisponible</div>
+                        ):(
+                            <GoalRadialBarChart
+                                key={data.user.userId}
+                                data={data.user.scorePourcentage}
+                            />
+                        )}
+                    </div>
                 </div>
-                <div className="home_goal">
-                    {! data.user.score ? (
-                        <div>Données indisponible</div>
-                    ):(
-                        <GoalRadialBarChart
-                            key={data.user.userId}
-                            data={data.user.scorePourcentage}
-                        />
-                    )}
+                </div>
+                <div className="home_nutrition">
+                    {data.user.getNutritionDatas().map((nutrition) => (
+                        <NutritionStats
+                            key={nutrition.type}
+                            type={nutrition.type}
+                            value={nutrition.value}
+                        />)
+                    )}  
+                </div>
                 </div>
             </div>)
 }
