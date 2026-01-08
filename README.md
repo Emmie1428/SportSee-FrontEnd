@@ -34,11 +34,11 @@ npm start
 ```
 
 ## 🌐 Endpoints API
-GET /user/:id   --Récupère les informations du profil de l'utilisateur, sa progression et ses valeurs nutritionnelles
-GET /user/:id/activity   --Récupère le poids et les calories dépensées à chaque jour
-GET /user/:id/average-sessions   --Récupère la durée des activité selon le jour de la semaine
-GET /user/:id/performance   --Récupère les valeurs de performances selon l'intensité, la vitesse, la force, l'endurance, l'énergie et le cardio. 
+- GET /user/:id   --Récupère les informations du profil de l'utilisateur, sa progression et ses valeurs nutritionnelles
+- GET /user/:id/activity   --Récupère le poids et les calories dépensées à chaque jour
+- GET /user/:id/average-sessions   --Récupère la durée des activité selon le jour de la semaine
+- GET /user/:id/performance   --Récupère les valeurs de performances selon l'intensité, la vitesse, la force, l'endurance, l'énergie et le cardio. 
 
 ## 👥 Utilisateurs disponibles (mock)
-ID: 12 NOM: Karl
-ID: 18 NOM: Cécilia
+- ID: 12 NOM: Karl
+- ID: 18 NOM: Cécilia
