@@ -1,16 +1,44 @@
-# React + Vite
+# 🏃 SportSee - Tableau de bord d'analyse sportive
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📖 Description
+Application d'analyse de progression de coaching sportif. Permet de suivre les objectifs, un résumé des sessions, un bilan des valeurs nutritionnelles et plus. 
 
-Currently, two official plugins are available:
+## 🛠️ Technologies utilisées
+![React](https://img.shields.io/badge/React-19.2.0-blue)
+![React Dom](https://img.shields.io/badge/React_Dom-19.2.0-blue)
+![React Router](https://img.shields.io/badge/React_Router-7.10.1-blue)
+![Recharts](https://img.shields.io/badge/Recharts-3.5.1-purple)
+![Sass](https://img.shields.io/badge/Sass-1.96.0-pink)
+![Axios](https://img.shields.io/badge/Axios-1.13.2-lightgrey)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🖼️ Aperçu
 
-## React Compiler
+![Aperçu de l'application](./src/screenshot/home-page.PNG)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Installation
 
-## Expanding the ESLint configuration
+### ⚠️ Prérequis
+- [Node.js](https://nodejs.org/) (v16+)
+- npm ou yarn
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### BackEnd (API)
+Cloner et suivre les instructions d'installation du README :
+https://github.com/OpenClassrooms-Student-Center/SportSee.git
+
+### FrontEnd
+```bash
+git clone https://github.com/Emmie1428/SportSee-FrontEnd.git
+cd sportsee
+npm install
+npm start
+```
+
+## 🌐 Endpoints API
+GET /user/:id   --Récupère les informations du profil de l'utilisateur, sa progression et ses valeurs nutritionnelles
+GET /user/:id/activity   --Récupère le poids et les calories dépensées à chaque jour
+GET /user/:id/average-sessions   --Récupère la durée des activité selon le jour de la semaine
+GET /user/:id/performance   --Récupère les valeurs de performances selon l'intensité, la vitesse, la force, l'endurance, l'énergie et le cardio. 
+
+## 👥 Utilisateurs disponibles (mock)
+ID: 12 NOM: Karl
+ID: 18 NOM: Cécilia
