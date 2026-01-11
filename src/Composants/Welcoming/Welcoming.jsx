@@ -1,6 +1,7 @@
  import "./Welcoming.scss"
 
 function Welcoming ({firstName}) {
+    //Vérification si donnée indéfinie ou null et réponse d'erreur//
     if (firstName === undefined || firstName === null)
         return (<h1 className="welcome_title">Bonjour
                     <span className="welcome_title_name"> utilisateur inconnu</span> 

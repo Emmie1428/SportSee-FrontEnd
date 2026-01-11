@@ -11,6 +11,7 @@ class Performance {
         this.data = data.data
     }
 
+    //Association du chiffre de type de donnée à son terme et récupération des donnes pour Performance//
     get formattedPerformance() {
         const kindTitle = {1:"Cardio", 2:"Énergie", 3:"Endurance", 4:"Force", 5:"Vitesse", 6:"Intensité"}
         const performancedata =  this.data.map((data) => ({

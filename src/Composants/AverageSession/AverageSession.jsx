@@ -1,6 +1,7 @@
 import { AreaChart, Area, XAxis, YAxis, ResponsiveContainer, Tooltip, Rectangle} from 'recharts';
 import "./AverageSession.scss"
 
+//Style personnalisé pour le XAxis//
 const CustomCursor = (props) => {
   const { points, width, height } = props;
   const { x, y } = points[0];

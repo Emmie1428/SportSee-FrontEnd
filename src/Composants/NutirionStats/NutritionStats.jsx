@@ -4,7 +4,7 @@ import apple from "../../Assets/apple.svg"
 import burger from"../../Assets/burger.svg"
 import "./NutritionStats.scss"
 
-
+//Création des différents titres, unités, icônes et couleur selon le type de nutriment//
 const nutritionConfig = {
     calories: {title: "Calories", unit: "kCal", icon: flame, color: "rgba(255, 0, 0, 0.1)"}, 
     proteines: {title: "Protéines", unit: "g", icon: chicken, color: "rgba(74, 184, 255, 0.1)" },
@@ -12,9 +12,9 @@ const nutritionConfig = {
     lipides: {title: "Lipides", unit: "g", icon: burger, color: "rgba(253, 81, 129, 0.1)"}
 }
     
-
 function NutritionStats ({type, value}) {
     const config = nutritionConfig[type]
+    //Vérification si donnée indéfinie ou null et réponse d'erreur//
     if (value === undefined || value === null) {
         return (
             <div className="nutrition-error">

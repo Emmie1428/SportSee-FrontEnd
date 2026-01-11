@@ -5,6 +5,7 @@ class User {
         this.firstName = data.userInfos.firstName
         this.lastName = data.userInfos.lastName
         this.age = data.userInfos.age
+        //nommé différement selon les users//
         this.score = data.todayScore || data.score
         this.calorieCount = data.keyData.calorieCount
         this.proteinCount = data.keyData.proteinCount
@@ -12,6 +13,7 @@ class User {
         this.lipidCount = data.keyData.lipidCount
     }
 
+    //Association et récupération des données des valeurs nutritionnelles et leur types pour NutritionStats//
     getNutritionDatas () {
         return [
             {type: "calories", value: this.calorieCount}, 
@@ -21,6 +23,8 @@ class User {
         ]
     }
 
+
+    //Math pour transformer le score en % pour Goal//
     get scorePourcentage() {
         return [
             {name:"score", value: this.score*100, fill: "#FF0000"}

@@ -5,6 +5,7 @@ class Activity {
         this.sessions = data.sessions
     }
 
+    //Création du jour et récupération des données pour DailyActivity//
     get formattedActivity() {
         return this.sessions.map((session, index) => ({
             day: (index + 1).toString(),

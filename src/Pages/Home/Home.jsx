@@ -23,7 +23,8 @@ function Home () {
                 getAverageSessions(Number(userId)),
                 getPerformance(Number(userId))
             ])
-
+        
+        //catch données manquantes//
         if (!user && !activity && !averageSessions && !performance){
             setHasError(true) 
             return
@@ -36,8 +37,10 @@ function Home () {
         fetchAllDatas()},
         [userId]) 
 
+    //Redirection vers la page d'erreur si données manquantes//
     if (hasError) return (<Navigate to="*"/>)
-        
+    
+    //Affichage du chargement le temps de récupérer les données
     if (!isLoaded) return (<div>Chargement...</div>)
      
     return (<div className="home">

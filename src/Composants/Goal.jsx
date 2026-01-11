@@ -1,9 +1,6 @@
 import { RadialBarChart, RadialBar, ResponsiveContainer, PolarAngleAxis} from 'recharts'
 
-
 const GoalRadialBarChart = ({data}) => {
-    
-    console.log("Score:", data)
   return (
     <div className="daily-activity" style={{ backgroundColor: "#FBFBFB", padding: "20px", borderRadius: "5px", fontWeight: "500", height: "223px", position: "relative"}}>
         <h3 style={{margin: 0, fontSize: "15px"}}>Score</h3>
@@ -35,22 +32,21 @@ const GoalRadialBarChart = ({data}) => {
                     
                 />
             </RadialBarChart>
-            <div style={{ 
-                position: "absolute",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -53%)",
-                width: "148px",
-                height: "148px",
-                borderRadius: "50%",
-                backgroundColor: "#FFFFFF", 
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                textAlign: "center"
-                
-                    }}>
+                <div style={{ 
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%, -53%)",
+                    width: "148px",
+                    height: "148px",
+                    borderRadius: "50%",
+                    backgroundColor: "#FFFFFF", 
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    textAlign: "center"
+                }}>
                 <p style={{
                     fontSize: "26px", 
                     fontWeight: "700",
@@ -67,7 +63,6 @@ const GoalRadialBarChart = ({data}) => {
                     de votre<br></br>objectif
                 </p>
             </div>
-                
         </ResponsiveContainer>
     </div>
   )
